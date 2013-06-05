@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/matito/mongoid-preferences.png)](https://codeclimate.com/github/matito/mongoid-preferences)
+
 # Mongoid::Preferences
 
 Add preferences hash to Mongoid model.
