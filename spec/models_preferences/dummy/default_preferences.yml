@@ -1,0 +1,15 @@
+view:
+  name: 'view_preferences'
+  preferences:
+    -
+        name: 'show_tabs_control'
+        type: 'boolean'
+        value: true
+    -
+        name: 'show_wall_page'
+        type: 'boolean'
+        value: true
+    -
+        name: 'show_materials_page'
+        type: 'boolean'
+        value: true
