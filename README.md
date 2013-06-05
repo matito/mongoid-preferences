@@ -1,4 +1,5 @@
 [![Code Climate](https://codeclimate.com/github/matito/mongoid-preferences.png)](https://codeclimate.com/github/matito/mongoid-preferences)
+[![Coverage Status](https://coveralls.io/repos/matito/mongoid-preferences/badge.png)](https://coveralls.io/r/matito/mongoid-preferences)
 
 # Mongoid::Preferences
 
