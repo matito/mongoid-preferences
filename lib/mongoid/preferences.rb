@@ -1,8 +1,8 @@
+require 'mongoid/preferences/preferenceable'
+require 'mongoid/preferences/version'
+
 module Mongoid
   module Preferences
-
-    require 'mongoid/preferences/preferenceable'
-    require 'mongoid/preferences/version'
 
     include ActiveSupport::Configurable
 
