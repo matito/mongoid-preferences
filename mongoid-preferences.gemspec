@@ -23,4 +23,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('mongoid-rspec', '~> 1.5')
   gem.add_development_dependency('database_cleaner', '~> 1.0')
   gem.add_development_dependency('redcarpet', '~> 2.2')
+  gem.add_development_dependency('json', '~> 1.7.7')
 end

@@ -5,7 +5,7 @@ module Mongoid
 
       included do
 
-        field :preferences, :type => Hash, :default => {}
+        field :preferences, :type => Hash, :default => Proc.new { HashWithIndifferentAccess.new() }
 
         after_initialize :load_preferences
 
@@ -17,6 +17,12 @@ module Mongoid
         # Returns the value of preference or nil if the preference is not found
         def pref(name)
           self.preferences[name]
+        end
+
+        # Retruns true if the model has the preference, else returns false
+        def has_pref?(name)
+          return false unless self.preferences.has_key?(name)
+          true
         end
 
         # Set the value of specified preference or add a new preference, and returns the value
@@ -56,7 +62,7 @@ module Mongoid
         def default_preferences
           return self.class.class_variable_get :@@default_preferences if self.class.class_variable_defined? :@@default_preferences
 
-          default_preferences_path = File.join(Preferences.model_preferences_path, "#{self.class.name.downcase}",'default_preferences.yml')
+          default_preferences_path = File.join(Preferences.model_preferences_path, "#{self.class.name.downcase}", 'default_preferences.yml')
           if File.exist?(default_preferences_path)
             self.class.class_variable_set :@@default_preferences, HashWithIndifferentAccess.new(YAML.load_file(default_preferences_path)) # for access with symbols
           else
@@ -84,12 +90,6 @@ module Mongoid
             end
           end
           model_preferences_hash
-        end
-
-        # Retruns true if the model has the preference, else returns false
-        def has_pref?(name)
-          return false unless self.preferences.has_key?(name)
-          true
         end
 
       end

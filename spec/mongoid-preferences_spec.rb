@@ -273,4 +273,21 @@ describe Mongoid::Preferences::Preferenceable do
 
   end
 
+  describe '#has_pref?' do
+
+    context 'when preference exist' do
+      before { set_right_preferences_path }
+      it 'returns true' do
+        expect(model_with_empty_preferences.has_pref? :show_wall_page).to be_true
+      end
+    end
+
+    context 'when preference not exist' do
+      before { set_right_preferences_path }
+      it 'returns false' do
+        expect(model_with_empty_preferences.has_pref? :wrong_pref).to be_false
+      end
+    end
+  end
+
 end
