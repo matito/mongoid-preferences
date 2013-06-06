@@ -1,3 +1,4 @@
+[![Gem Version](https://badge.fury.io/rb/mongoid-preferences.png)](http://badge.fury.io/rb/mongoid-preferences)
 [![Build Status](https://travis-ci.org/matito/mongoid-preferences.png?branch=master)](https://travis-ci.org/matito/mongoid-preferences)
 [![Code Climate](https://codeclimate.com/github/matito/mongoid-preferences.png)](https://codeclimate.com/github/matito/mongoid-preferences)
 [![Coverage Status](https://coveralls.io/repos/matito/mongoid-preferences/badge.png)](https://coveralls.io/r/matito/mongoid-preferences)
