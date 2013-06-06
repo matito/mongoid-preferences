@@ -1,1 +1,1 @@
-require 'mongoid/preferences'
+require 'mongoid-preferences/preferences'

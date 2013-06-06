@@ -1,5 +1,5 @@
-require 'mongoid/preferences/preferenceable'
-require 'mongoid/preferences/version'
+require 'mongoid-preferences/preferences/preferenceable'
+require 'mongoid-preferences/preferences/version'
 
 module Mongoid
   module Preferences
