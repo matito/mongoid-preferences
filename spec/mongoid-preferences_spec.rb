@@ -213,6 +213,42 @@ describe Mongoid::Preferences::Preferenceable do
       end
     end
 
+    context 'when add new preference with string key' do
+      before {
+        @pref_value = true
+        model_with_preferences.write_pref('preference_key', @pref_value)
+        model_with_preferences.save
+      }
+      it 'returns the preference value accessing with string key' do
+        # Force reload of instance
+        reloaded_instance = Dummy.last
+        expect(reloaded_instance.pref('preference_key')).to eq(@pref_value)
+      end
+      it 'returns the preference value accessing with symbol key' do
+        # Force reload of instance
+        reloaded_instance = Dummy.last
+        expect(reloaded_instance.pref(:preference_key)).to eq(@pref_value)
+      end
+    end
+
+    context 'when add new preference with symbol key' do
+      before {
+        @pref_value = true
+        model_with_preferences.write_pref(:preference_key, @pref_value)
+        model_with_preferences.save
+      }
+      it 'returns the preference value accessing with string key' do
+        # Force reload of instance
+        reloaded_instance = Dummy.last
+        expect(reloaded_instance.pref('preference_key')).to eq(@pref_value)
+      end
+      it 'returns the preference value accessing with symbol key' do
+        # Force reload of instance
+        reloaded_instance = Dummy.last
+        expect(reloaded_instance.pref(:preference_key)).to eq(@pref_value)
+      end
+    end
+
   end
 
   describe '#displayable_preferences' do

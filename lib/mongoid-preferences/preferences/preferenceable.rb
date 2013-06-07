@@ -75,7 +75,7 @@ module Mongoid
         # Returns a hash of preferences merged from file and model
         def merged_preferences
           # get the preferences from model
-          model_preferences_hash = self.read_attribute(:preferences)
+          model_preferences_hash = HashWithIndifferentAccess.new(self.read_attribute(:preferences))
           # get the default preferences form file
           default_preferences_hash = default_preferences
           # merge the preferences
