@@ -11,7 +11,7 @@ module Mongoid
 
         # Returns all the preferences
         def preferences
-          @_hash ||= merged_preferences
+          @_prefs ||= merged_preferences
         end
 
         # Returns the value of preference or nil if the preference is not found
@@ -62,7 +62,8 @@ module Mongoid
         def default_preferences
           return self.class.class_variable_get :@@default_preferences if self.class.class_variable_defined? :@@default_preferences
 
-          default_preferences_path = File.join(Preferences.model_preferences_path, "#{self.class.name.downcase}", 'default_preferences.yml')
+          default_preferences_path = File.join(Preferences.model_preferences_path, "#{self.class.name.downcase}.yml")
+
           if File.exist?(default_preferences_path)
             self.class.class_variable_set :@@default_preferences, HashWithIndifferentAccess.new(YAML.load_file(default_preferences_path)) # for access with symbols
           else

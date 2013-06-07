@@ -5,8 +5,7 @@ describe Mongoid::Preferences::Preferenceable do
   let(:file_default_preferences_hash) {
     HashWithIndifferentAccess.new( YAML.load_file(File.join(File.dirname(__FILE__),
                                                             'models_preferences',
-                                                            'dummy',
-                                                            'default_preferences.yml')))
+                                                            'dummy.yml')))
   }
 
   let(:view_preferences_hash) { file_default_preferences_hash[:view][:preferences] }

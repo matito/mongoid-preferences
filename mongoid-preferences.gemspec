@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/mongoid/preferences/version', __FILE__)
+require File.expand_path('../lib/mongoid-preferences/preferences/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Mattia Toso"]
@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Mongoid::Preferences::VERSION
 
-  gem.add_dependency('mongoid', '~> 3.0.0')
+  gem.add_dependency('mongoid', '~> 3')
 
   gem.add_development_dependency('rake', '~> 10.0')
   gem.add_development_dependency('rspec', '~> 2.12')
