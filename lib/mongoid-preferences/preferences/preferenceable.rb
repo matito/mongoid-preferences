@@ -53,7 +53,7 @@ module Mongoid
         private
 
         def load_preferences
-          if read_attribute(:preferences).empty?
+          if read_attribute(:preferences).blank?
             write_attribute(:preferences, preferences)
           end
         end
